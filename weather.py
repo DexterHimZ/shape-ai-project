@@ -19,12 +19,12 @@ date_time = datetime.now().strftime("%d %b %Y | %I:%M:%S %p")
 
 with open('readme.txt', 'w') as f:
 
-    f.writelines("-------------------------------------------------------------")
-    f.writelines("Weather Stats for - {}  || {}".format(location.upper(), date_time))
-    f.writelines("-------------------------------------------------------------")
-
-    f.writelines("Current temperature is: {:.2f} deg C".format(temp_city))
-    f.writelines("Current weather desc  :",weather_desc)
-    f.writelines("Current Humidity      :",hmdt, '%')
-    f.writelines("Current wind speed    :",wind_spd ,'kmph')
+    f.writelines("-------------------------------------------------------------"+"\n")
+    f.writelines("Weather Stats for - {}  || {}".format(location.upper(), date_time)+"\n")
+    f.writelines("-------------------------------------------------------------"+"\n")
+    f.writelines("Current temperature is: {:.2f} deg C".format(temp_city)+"\n")
+    f.writelines("Current weather desc  :"+weather_desc+"\n")
+    f.writelines("Current Humidity      :"+str(hmdt)+ '%'+"\n")
+    f.writelines("Current wind speed    :"+str(wind_spd) +'kmph'+"\n")
     f.close()
+    print(open('readme.txt').read())
