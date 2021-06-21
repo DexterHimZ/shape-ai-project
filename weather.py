@@ -17,12 +17,14 @@ hmdt = api_data['main']['humidity']
 wind_spd = api_data['wind']['speed']
 date_time = datetime.now().strftime("%d %b %Y | %I:%M:%S %p")
 
-sys.stdout = open('readme.txt', 'w')
-print ("-------------------------------------------------------------")
-print ("Weather Stats for - {}  || {}".format(location.upper(), date_time))
-print ("-------------------------------------------------------------")
-print ("Current temperature is: {:.2f} deg C".format(temp_city))
-print ("Current weather desc  :",weather_desc)
-print ("Current Humidity      :",hmdt, '%')
-print ("Current wind speed    :",wind_spd ,'kmph')
-sys.stdout.close()
+with open('readme.txt', 'w') as f:
+
+    f.writelines("-------------------------------------------------------------")
+    f.writelines("Weather Stats for - {}  || {}".format(location.upper(), date_time))
+    f.writelines("-------------------------------------------------------------")
+
+    f.writelines("Current temperature is: {:.2f} deg C".format(temp_city))
+    f.writelines("Current weather desc  :",weather_desc)
+    f.writelines("Current Humidity      :",hmdt, '%')
+    f.writelines("Current wind speed    :",wind_spd ,'kmph')
+    f.close()
