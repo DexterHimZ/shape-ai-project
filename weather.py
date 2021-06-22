@@ -31,5 +31,3 @@ with open('output.txt', 'w') as f:
     f.writelines("Current wind speed    : "+str(wind_spd) +' m/s'+"\n")
     f.close()
     print(open('output.txt').read())
-
-    
