@@ -16,7 +16,7 @@ hmdt = api_data['main']['humidity']
 wind_spd = api_data['wind']['speed']
 date_time = datetime.now().strftime("%d %b %Y | %I:%M:%S %p")
 
-with open('readme.txt', 'w') as f:
+with open('output.txt', 'w') as f:
 
     f.writelines("-------------------------------------------------------------"+"\n")       #writing the data to a text file
     f.writelines("Weather Stats for - {}  || {}".format(location.upper(), date_time)+"\n")
@@ -26,4 +26,4 @@ with open('readme.txt', 'w') as f:
     f.writelines("Current Humidity      :"+str(hmdt)+ '%'+"\n")
     f.writelines("Current wind speed    :"+str(wind_spd) +'kmph'+"\n")
     f.close()
-    print(open('readme.txt').read())                                                         #printing the data from the text file
+    print(open('output.txt').read())                                                         #printing the data from the text file
